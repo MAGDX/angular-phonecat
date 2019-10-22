@@ -151,5 +151,12 @@
         "imageUrl": "img/phones/motorola-charm-with-motoblur.0.jpg", 
         "name": "Motorola CHARM\u2122 with MOTOBLUR\u2122", 
         "snippet": "Motorola CHARM fits easily in your pocket or palm.  Includes MOTOBLUR service."
+    },
+    {
+        "age": 20, 
+        "id": "xiaomi-redmi-note-7", 
+        "imageUrl": "img/phones/xiaomi-redmi-note-7.0.jpg", 
+        "name": "XIAOMI REDMI NOTE 7", 
+        "snippet": "Primer movil de gama baja con camara de 48 megapixeles."
     }
 ]
