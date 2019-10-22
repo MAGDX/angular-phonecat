@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-2">
+      <ul class="list-group">
+        <li class="list-group-item" ng-repeat="phone in $ctrl.phones" ng-click="$ctrl.selecionar(phone)">
+          <img ng-src="{{phone.imageUrl}}" class="responsive" />
+          {{phone.name}}
+        </li>
+      </ul>
+    </div>
+    <div class="col-md-5" ng-show="$ctrl.phone1">
+      <h1>{{$ctrl.phone1.name | subcadena:25}}</h1>
+      <img ng-src="{{$ctrl.phone1.imageUrl}}" class="responsive" />
+      Flash: <strong>{{$ctrl.phone1.flash}}</strong>
+      <br>
+      RAM: <strong>{{$ctrl.phone1.ram}}</strong>
+    </div>
+    <div class="col-md-5" ng-show="$ctrl.phone2">
+      <h1>{{$ctrl.phone2.name}}</h1>
+      <img ng-src="{{$ctrl.phone2.imageUrl}}" class="responsive" />
+      Flash: <strong>{{$ctrl.phone2.flash}}</strong>
+      <br>
+      RAM: <strong>{{$ctrl.phone2.ram}}</strong>
+    </div>
+  </div>
+</div>
