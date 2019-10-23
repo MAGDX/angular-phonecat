@@ -2,11 +2,11 @@
 <hr>
 <img ng-src="{{$ctrl.phone1.imageUrl}}" class="responsive" />
 Flash: <strong>{{$ctrl.phone1.flash}} MB</strong>
-<span ng-show="$ctrl.phone2" class="label label-{{ ($ctrl.phone1.flash >= $ctrl.phone2.flash)?'success':'danger' }}">
-  {{($ctrl.phone1.flash >= $ctrl.phone2.flash)?'+':''}} {{$ctrl.phone1.flash - $ctrl.phone2.flash}} MB
-</span>
+<am-comparator ng-show="$ctrl.phone2" v1="$ctrl.phone1.flash" v2="$ctrl.phone2.flash"></am-comparator>
 <br>
 RAM: <strong>{{$ctrl.phone1.ram}} MB</strong>
-<span ng-show="$ctrl.phone2" class="label label-{{ ($ctrl.phone1.ram >= $ctrl.phone2.ram)?'success':'danger' }}">
-  {{($ctrl.phone1.ram >= $ctrl.phone2.ram)?'+':''}} {{$ctrl.phone1.ram - $ctrl.phone2.ram}} MB
-</span>
+<am-comparator ng-show="$ctrl.phone2" v1="$ctrl.phone1.ram" v2="$ctrl.phone2.ram"></am-comparator>
+<br><br>
+
+<!-- TODO boton comprar -->
+<button class="btn btn-info">Comprar</button>
