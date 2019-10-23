@@ -96,3 +96,9 @@ img.responsive{
   width: 100%;
   height: auto;
 }
+
+.selected {
+  border-color: green;
+  border-width: 2px;
+  margin-bottom: 1px;
+}

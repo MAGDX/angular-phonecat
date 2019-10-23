@@ -17,7 +17,7 @@ angular.
         self.phone2 = null;
         self.orderProp = 'age';
 
-        this.selecionar = function(phone){
+        this.seleccionar = function(phone){
           console.trace('seleccionado movil');
           if(self.phone1 == phone){
             self.phone1 = null;
