@@ -9,9 +9,16 @@ component('phoneCard', {
     phone1: '=',
     phone2: '='
   },
-  controller: ['Phone',
-    function PhoneCardController(Phone) {
-      console.trace('PhoneCardController');
+  controller: ['$scope',
+    function PhoneComparableController($scope) {
+      var self = this;
+      
+      this.comprarMovil = function () {
+        console.trace('click boton compra %o', self.phone1);
+        $scope.$emit("eventoCompra", {
+          telefono: self.phone1
+        });
+      }
     }
   ]
 }).

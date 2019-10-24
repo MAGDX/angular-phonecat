@@ -1,5 +1,7 @@
 <div class="container">
+  {{ $ctrl.recibirEventoHijo()}}
   <div class="row">
+    <!-- Lista Moviles -->
     <div class="col-md-2">
       <ul class="list-group">
         <li class="list-group-item" ng-class="{'selected': $ctrl.phone1 == phone || $ctrl.phone2 == phone}"
@@ -9,11 +11,9 @@
         </li>
       </ul>
     </div>
-    <div class="col-md-5" ng-show="$ctrl.phone1">
-      <phone-card phone1="$ctrl.phone1" phone2="$ctrl.phone2"></phone-card>
-    </div>
-    <div class="col-md-5" ng-show="$ctrl.phone2">
-      <phone-card phone1="$ctrl.phone2" phone2="$ctrl.phone1"></phone-card>
-    </div>
-  </div>
+    <!-- Primer comparador -->
+    <phone-card phone1="$ctrl.phone1" phone2="$ctrl.phone2" class="col-md-5 fijado"></phone-card>
+    <!-- Segundo comparador -->
+    <phone-card phone1="$ctrl.phone2" phone2="$ctrl.phone1" class="col-md-5 fijado movil2"></phone-card>
+  </div><!-- End Row -->
 </div>

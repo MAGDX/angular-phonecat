@@ -1,12 +1,17 @@
-<h2 class="text-center">{{$ctrl.phone1.name}}</h2>
+<h2 class="text-center">{{($ctrl.phone1)?$ctrl.phone1.name:'Seleccione un movil...'}}</h2>
 <hr>
-<img ng-src="{{$ctrl.phone1.imageUrl}}" class="responsive" />
-Flash: <strong>{{$ctrl.phone1.flash}} MB</strong>
-<am-comparator ng-show="$ctrl.phone2" v1="$ctrl.phone1.flash" v2="$ctrl.phone2.flash"></am-comparator>
-<br>
-RAM: <strong>{{$ctrl.phone1.ram}} MB</strong>
-<am-comparator ng-show="$ctrl.phone2" v1="$ctrl.phone1.ram" v2="$ctrl.phone2.ram"></am-comparator>
-<br><br>
+<img ng-if="!$ctrl.phone1" src="../img/phone-icon.jpg" class="responsive"></p>
+<div ng-if="$ctrl.phone1">
+    <img ng-src="{{$ctrl.phone1.imageUrl}}" class="responsive" />
+    <p class="text-center">
+        Flash: <strong>{{$ctrl.phone1.flash}} MB</strong>
+        <am-comparator ng-show="$ctrl.phone2" v1="$ctrl.phone1.flash" v2="$ctrl.phone2.flash"></am-comparator>
+    </p>
+    <p class="text-center">
+        RAM: <strong>{{$ctrl.phone1.ram}} MB</strong>
+        <am-comparator ng-show="$ctrl.phone2" v1="$ctrl.phone1.ram" v2="$ctrl.phone2.ram"></am-comparator>
+    </p>
 
-<!-- TODO boton comprar -->
-<button class="btn btn-info">Comprar</button>
+    <!-- TODO boton comprar -->
+    <button class="btn btn-info btn-centrado" ng-click="$ctrl.comprarMovil()">Comprar</button>
+</div>

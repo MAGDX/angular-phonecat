@@ -81,19 +81,22 @@ h1 {
   font-weight: bold;
 }
 
-.specs > li {
+.specs>li {
   display: inline-block;
   vertical-align: top;
   width: 200px;
 }
 
-.specs > li > span {
+.specs>li>span {
   font-size: 1.2em;
   font-weight: bold;
 }
 
-img.responsive{
-  width: 100%;
+img.responsive {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
   height: auto;
 }
 
@@ -101,4 +104,18 @@ img.responsive{
   border-color: green;
   border-width: 2px;
   margin-bottom: 1px;
+}
+
+phone-card.fijado {
+  position: fixed;
+}
+
+phone-card.movil2 {
+  left: 60%;
+}
+
+.btn-centrado {
+  display: block;
+  width: 75%;
+  margin-left: 67px;
 }
