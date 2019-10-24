@@ -1,11 +1,42 @@
 <div class="container">
-  {{ $ctrl.recibirEventoHijo()}}
+  <div ng-if="$ctrl.productoCompra" class="alert alert-success alert-dismissible" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
+        aria-hidden="true">&times;</span></button>
+    <strong>Buena elección!</strong> Vas a comprar {{$ctrl.productoCompra.name}}.
+  </div>
   <div class="row">
-    <!-- Lista Moviles -->
     <div class="col-md-2">
+      <!-- Buscador Moviles -->
+      <div class="input-group">
+        <span class="input-group-addon" id="basic-addon1"><i class="fas fa-search"></i></span>
+        <input id="buscador" class="form-control" ng-model="$ctrl.query" placeholder="Buscador..."/>
+      </div>
+      <!-- Rango Almacenamiento -->
+      <label for="formControlRange">Flash: {{ ui.flash }} MB</label>
+          <input type="range" 
+                 min="0" 
+                 max="32000"
+                 value="32000"
+                 numeric
+                 data-ng-model="ui.flash"
+                 class="form-control-range"
+                 id="formControlRange">
+      </label>
+      <hr>
+      <label for="formControlRange">RAM: {{ ui.ram }} MB</label>
+          <input type="range" 
+                 min="0" 
+                 max="3000"
+                 value="3000"
+                 numeric
+                 data-ng-model="ui.ram"
+                 class="form-control-range"
+                 id="formControlRange">    
+      </label>
+      <!-- Lista Moviles -->
       <ul class="list-group">
         <li class="list-group-item" ng-class="{'selected': $ctrl.phone1 == phone || $ctrl.phone2 == phone}"
-          ng-repeat="phone in $ctrl.phones" ng-click="$ctrl.seleccionar(phone)">
+          ng-repeat="phone in $ctrl.phones | filter:$ctrl.query | storageFilter:'flash':0:ui.flash | storageFilter:'ram':0:ui.ram" ng-click="$ctrl.seleccionar(phone)">
           <img ng-src="{{phone.imageUrl}}" class="responsive" />
           {{phone.name}}
         </li>

@@ -30,9 +30,7 @@ component('phoneComparador', {
       }
 
       $scope.$on("eventoCompra", function (event, data) {
-
-        alert('eventoCompra en padre ' + data.telefono.id);
-
+        self.productoCompra =  data.telefono;
       });
     }
   ]
