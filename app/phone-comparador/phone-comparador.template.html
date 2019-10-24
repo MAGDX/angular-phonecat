@@ -16,9 +16,9 @@
           <input type="range" 
                  min="0" 
                  max="32000"
-                 value="32000"
                  numeric
                  data-ng-model="ui.flash"
+                 ng-init="ui.flash = 32000"
                  class="form-control-range"
                  id="formControlRange">
       </label>
@@ -27,9 +27,9 @@
           <input type="range" 
                  min="0" 
                  max="3000"
-                 value="3000"
                  numeric
                  data-ng-model="ui.ram"
+                 ng-init="ui.ram = 3000"
                  class="form-control-range"
                  id="formControlRange">    
       </label>

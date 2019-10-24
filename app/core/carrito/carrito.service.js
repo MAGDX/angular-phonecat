@@ -1,9 +1,9 @@
 angular.
-module('core.phone').
-factory('compraMovil',
+module('core.carrito').
+factory('Carrito',
     function () {
         return {
-            producto: null,
+            producto: [],
             getProducto: function () {
                 return this.producto;
             },
