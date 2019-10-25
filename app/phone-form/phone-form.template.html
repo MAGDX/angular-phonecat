@@ -1,3 +1,47 @@
-<h2>Formulario Nuevo Movil</h2>
-
-LLEGAMOS!!!
+<div class="container">
+    <h2>Formulario Nuevo Movil</h2>
+    <hr>
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <form name="phone" ng-submit="$ctrl.guardarDatos(phone.$valid)" novalidate>
+                <div class="form-group">
+                    <label for="name">Nombre del movil*:</label>
+                    <div class="input-group">
+                        <span class="input-group-addon" id="basic-addon1"><i class="fas fa-mobile-alt"></i></span>
+                        <input type="text" name="name" ng-model="$ctrl.phone.name" id="name" class="form-control"
+                            placeholder="Nombre del movil" aria-describedby="basic-addon1" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="descripcion">Descripción:</label>
+                    <div class="input-group">
+                        <span class="input-group-addon" id="basic-addon1"><i class="fas fa-tag"></i></span>
+                        <input type="text" name="snippet" ng-model="$ctrl.phone.snippet" id="descripcion"
+                            class="form-control" placeholder="Descripcion" aria-describedby="basic-addon1">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="flash">Flash**:</label>
+                    <div class="input-group">
+                        <span class="input-group-addon" id="basic-addon1"><i class="fas fa-hdd"></i></span>
+                        <input type="text" name="flash" ng-model="$ctrl.phone.flash" id="flash" class="form-control"
+                            placeholder="Almacenamiento (MB)" required pattern="[0-9]{4,8}">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="ram">RAM**:</label>
+                    <div class="input-group">
+                        <span class="input-group-addon" id="basic-addon1"><i class="fas fa-memory"></i></span>
+                        <input type="text" name="ram" ng-model="$ctrl.phone.ram" id="ram" class="form-control"
+                            placeholder="Memoria RAM (MB)" required pattern="[0-9]{3,8}">
+                    </div>
+                </div>
+                <p class="help-block">* Campos requeridos ** Campos numericos: 4-8 digitos</p>
+                <button class="btn btn-primary {{(phone.$valid)?'':'disabled'}}"
+                    ng-disabled="{{phone.$valid}}">Guardar</button>
+            </form>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+</div>

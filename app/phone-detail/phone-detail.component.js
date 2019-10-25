@@ -9,8 +9,6 @@ component('phoneDetail', {
     function PhoneDetailController($routeParams, Phone, $location) {
       var self = this;
 
-      self.phone = null;
-
       Phone.getById($routeParams.phoneId).then(
         function successCallback(response) {
           console.trace("Success");

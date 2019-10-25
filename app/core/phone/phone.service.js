@@ -18,5 +18,11 @@ factory('Phone', ['$http', function ($http) {
     return $http.get(url);
   }
 
+  service.createPhone = function(phone){
+    let url = endpoint + phone.id;
+    console.trace('POST ' + url);
+    return $http.post(url, phone);
+  }
+
   return service;
 }]);
