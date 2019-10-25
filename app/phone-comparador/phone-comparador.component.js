@@ -12,10 +12,19 @@ component('phoneComparador', {
 
       var self = this;
 
-      self.phones = Phone.query();
       self.phone1 = null;
       self.phone2 = null;
       self.orderProp = 'age';
+
+      Phone.getAll().then(
+        function successCallback(response) {
+          console.trace("Success");
+          self.phones = response.data;
+        },
+        function errorCallback(response) {
+          console.warn("Error");
+        }
+      );
 
       this.seleccionar = function (phone) {
         console.trace('seleccionado movil');
