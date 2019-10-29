@@ -5,9 +5,12 @@ angular.
 module('phoneCarrito').
 component('phoneCarrito', {
   templateUrl: 'phone-carrito/phone-carrito.template.html',
-  controller: ['$scope',
-    function PhoneCarritoController($scope) {
+  controller: ['Phone', 'Carrito',
+    function PhoneCarritoController(Phone, Carrito) {
       console.trace('PhoneCarrito Controller');
+
+      self = this;
+      self.productos = Carrito.getProductos();
     }
   ]
 });

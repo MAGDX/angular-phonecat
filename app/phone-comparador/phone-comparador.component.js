@@ -5,8 +5,8 @@ angular.
 module('phoneComparador').
 component('phoneComparador', {
   templateUrl: 'phone-comparador/phone-comparador.template.html',
-  controller: ['Phone', '$scope',
-    function PhoneComparadorController(Phone, $scope) {
+  controller: ['Phone', '$scope', 'Carrito',
+    function PhoneComparadorController(Phone, $scope, Carrito) {
 
       console.trace('PhoneComparadorController');
 
@@ -40,6 +40,17 @@ component('phoneComparador', {
 
       $scope.$on("eventoCompra", function (event, data) {
         self.productoCompra =  data.telefono;
+
+        let producto = {
+          "id": data.telefono.id,
+          "name": data.telefono.name,
+          "ram": data.telefono.ram,
+          "flash": data.telefono.flash,
+          "imageUrl": data.telefono.imageUrl,
+          "cantidad": 1
+        };
+
+        Carrito.guardarProducto(producto);
       });
     }
   ]

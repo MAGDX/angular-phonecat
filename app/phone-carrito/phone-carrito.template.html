@@ -1,3 +1,21 @@
 <h2>Carrito de la Compra</h2>
 
-LLEGAMOS!
+<ul class="list-group" ng-if="$ctrl.productos.length">
+    <li class="list-group-item" ng-repeat="producto in $ctrl.productos">
+        <div class="row">
+            <div class="col-md-3">
+                <img ng-src="{{producto.imageUrl}}" class="responsive" />
+            </div>
+            <div class="col-md-6">
+                <span class="centrado">Name: <strong>{{producto.name}}</strong></span>
+                <br>
+                <span class="centrado">RAM: <strong>{{producto.ram}}</strong></span>
+                <br>
+                <span class="centrado">Flash: <strong>{{producto.flash}}</strong></span>
+            </div>
+            <div class="col-md-3">
+                <span class="centrado"><strong>x{{producto.cantidad}}</strong></span>
+            </div>
+        </div>
+    </li>
+</ul>

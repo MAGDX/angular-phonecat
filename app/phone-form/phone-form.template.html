@@ -37,11 +37,12 @@
                             placeholder="Memoria RAM (MB)" required pattern="[0-9]{3,8}">
                     </div>
                 </div>
-                <p class="help-block">* Campos requeridos ** Campos numericos: 4-8 digitos</p>
-                <button class="btn btn-primary {{(phone.$valid)?'':'disabled'}}"
-                    ng-disabled="{{phone.$valid}}">Guardar</button>
+                <p class="help-block">* Campos requeridos  ** Campos numericos: 4-8 digitos</p>
+                <input type="submit" class="btn btn-primary"
+                    ng-disabled="phone.$invalid" value="Guardar">
             </form>
         </div>
-        <div class="col-md-2"></div>
+        <div class="col-md-2">
+        </div>
     </div>
 </div>

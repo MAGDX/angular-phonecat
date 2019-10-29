@@ -14,7 +14,10 @@ config(['$routeProvider',
     when('/comparador', {
       template: '<phone-comparador></phone-comparador>'
     }).
-    when('/nuevomovil', {
+    when('/form', {
+      template: '<phone-form></phone-form>'
+    }).
+    when('/form/:phoneId', {
       template: '<phone-form></phone-form>'
     }).
     when('/carrito', {

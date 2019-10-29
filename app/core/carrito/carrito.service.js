@@ -8,18 +8,15 @@ factory('Carrito',
                 console.debug('getproductos %s', this.productos.size);
                 return Array.from(this.productos.values());
             },
-            setProducto: function (p) {
-                //todo cantidad actualizar
-                if (this.productos.get(p.id) != undefined) {
-                    this.productos.get(p.id).cantidad++;
+            guardarProducto: function (p) {
+                console.log('Guardar producto');
 
+                let producto = this.productos.get(p.id);
+
+                if (producto) {
+                    producto.cantidad++;
                 } else {
-                    this.productos.set(p.id, {
-                        "cantidad": 1,
-                        "imagen": p.imageUrl,
-                        "id": p.id,
-                        "name": p.name
-                    });
+                    this.productos.set(p.id, p);
                 }
             }
         }; //end return

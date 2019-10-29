@@ -34,7 +34,7 @@
                  id="formControlRange">    
       </label>
       <!-- Lista Moviles -->
-      <ul class="list-group">
+      <ul class="list-group" ng-if="$ctrl.phones.length">
         <li class="list-group-item" ng-class="{'selected': $ctrl.phone1 == phone || $ctrl.phone2 == phone}"
           ng-repeat="phone in $ctrl.phones | filter:$ctrl.query | storageFilter:'flash':0:ui.flash | storageFilter:'ram':0:ui.ram" ng-click="$ctrl.seleccionar(phone)">
           <img ng-src="{{phone.imageUrl}}" class="responsive" />
